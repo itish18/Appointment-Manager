@@ -1,7 +1,7 @@
 const express = require("express");
 const colors = require("colors");
 const dotenv = require("dotenv").config();
-
+const path = require("path");
 const { errorHandler } = require("./middleware/errorMiddleware");
 const cron = require("node-cron");
 
@@ -22,12 +22,11 @@ app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/appointments", require("./routes/appointmentRoutes"));
 
 // Accessing the path module
-const path = require("path");
 
-app.use(express.static(path.resolve(__dirname, "./client/build")));
+app.use(express.static(path.resolve(__dirname, "../frontend/build")));
 
 app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+  response.sendFile(path.resolve(__dirname, "../frontend/build", "index.html"));
 });
 // error handler middleware
 app.use(errorHandler);
