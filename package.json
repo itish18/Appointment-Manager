@@ -22,6 +22,9 @@
   ],
   "author": "Kevin Taufer",
   "license": "MIT",
+  "engines": {
+    "node": "17.2.0"
+  },
   "bugs": {
     "url": "https://github.com/KevDev99/ameasy/issues"
   },
@@ -44,8 +47,6 @@
     "mongoose": "^6.2.10",
     "node-cron": "^3.0.0",
     "nodemailer": "^6.7.3",
-    "passport": "^0.6.0",
-    "passport-google-oauth20": "^2.0.0",
     "react-date-picker": "^8.4.0",
     "react-time-picker": "^4.5.0",
     "react-toastify": "^8.2.0"
