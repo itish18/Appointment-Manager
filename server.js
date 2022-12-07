@@ -23,10 +23,10 @@ app.use("/api/appointments", require("./routes/appointmentRoutes"));
 
 // Accessing the path module
 
-app.use(express.static(path.resolve(__dirname, "./client/build")));
+app.use(express.static(path.join(__dirname, "./client/build")));
 
 app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "build", "index.html"));
+  response.sendFile(path.join(__dirname, "build", "index.html"));
 });
 // error handler middleware
 app.use(errorHandler);
